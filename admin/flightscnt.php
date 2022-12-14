@@ -2,12 +2,13 @@
 
 require '../helpers/init_conn_db.php';
 
-if(!$conn){
+if (!$conn) {
     die("Connection Failed");
 }
 
 $sql = "SELECT * FROM flight";
-                $query = $conn->query($sql);
+$query = $conn->query($sql);
 
-                echo "$query->num_rows";
-?><!-- Visit freeprojectscodes.com for more projects -->
+echo "$query->num_rows";
+?>
+<!-- Visit freeprojectscodes.com for more projects -->

@@ -48,9 +48,9 @@ if(isset($_POST['signup_submit'])) {
                             header('Location: ../register.php?error=sqlerror');
                             exit();            
                         } else {
-                            $pwd_hash = password_hash($password, PASSWORD_DEFAULT);
+                            $pwd_hash = $password;
                             mysqli_stmt_bind_param($stmt,'sss',$username,$email_id,$pwd_hash);            
-                            mysqli_stmt_execute($stmt);  
+                            mysqli_stmt_execute($stmt);
                             
                             // LOGIN USer                            
                             $sql = 'SELECT * FROM Users WHERE username=? OR email=?;';
